@@ -113,6 +113,9 @@ function game(){
         console.log(round);
     }
 
+    console.log("You won " + playerWin + " rounds");
+    console.log("You lost " + playerLose + " rounds");
+
     if(playerWin > playerLose){
         console.log("You Win the Game!");
     }else{
