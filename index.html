@@ -2,11 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=REM:wght@300&family=Rubik&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <script src="R-P-S.js"></script>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    
+    <div class = 'container'>
+        <div class = "buttons">
+            <button id="rock" onClick="game(this.id)"><strong>Rock</strong></button>
+            <button id="paper" onClick="game(this.id)"><strong>Paper</strong></button>
+            <button id="scissors" onClick="game(this.id)"><strong>Scissors</strong></button>
+        </div>
+        <div class="results">
+            <div class="player-win info">
+                <h1>Rounds Player Won</h1>
+            </div>
+            <div class="draw info">
+                <h1>Draw</h1>
+            </div>
+            <div class="computer-win info">
+                <h1>Rounds Player Lost</h1>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
