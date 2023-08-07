@@ -36,6 +36,7 @@ function getComputerChoice(){
 let playerWin = 0;
 let playerLose = 0;
 let draw = 0;
+let result = "Rock, Paper or Scissors?";
 
 function playRound(player, computer) {
 
@@ -45,37 +46,37 @@ function playRound(player, computer) {
     if(playerSelection == "rock"){
         if(computerSelection == "scissors"){
             playerWin = playerWin + 1;
-            console.log("You win! Rock beats Scissor");
+            result = "You win! Rock beats Scissor";
         }else if(computerSelection == "paper"){
             playerLose = playerLose + 1;
-            console.log("You lose! Paper beats Rock");
+            result = "You lose! Paper beats Rock";
         }else{
             draw = draw + 1;
-            console.log("Draw");
+            result = "Draw";
         }
     }
     if(playerSelection == "paper"){
         if(computerSelection == "rock"){
             playerWin = playerWin + 1;
-            console.log("You win! Paper beats Rock");
+            result = "You win! Paper beats Rock";
         }else if(computerSelection == "scissors"){
             playerLose = playerLose + 1;
-            console.log("You lose! Scissor beats Paper");
+            result = "You lose! Scissor beats Paper";
         }else{
             draw = draw + 1;
-            console.log("Draw");
+            result ="Draw";
         }
     }
     if(playerSelection == "scissors"){
         if(computerSelection == "paper"){
             playerWin = playerWin + 1;
-            console.log("You win! Scissor beats Paper");
+            result = "You win! Scissor beats Paper";
         }else if(computerSelection == "rock"){
             playerLose = playerLose + 1;
-            console.log("You lose! Rock beats Scissor");
+            result = "You lose! Rock beats Scissor";
         }else{
             draw = draw + 1;
-            console.log("Draw");
+            result = "Draw";
         }
     }
 }
@@ -111,11 +112,18 @@ function game(playerSelection){
 const winsInfo = document.querySelector('.player-win');
 const drawInfo = document.querySelector('.draw');
 const losesInfo = document.querySelector('.computer-win');
-
+const resultsInfo = document.querySelector('.displayResults');
 
 let wins = document.createElement('h1');
 let loses = document.createElement('h1');
 let draws = document.createElement('h1');
+let results = document.createElement('h1');
+
+
+results.style.fontSize = '50px';
+results.style.fontFamily = 'REM, Rubik, sans-serif';
+results.style.margin = '0';
+results.textContent = result;
 
 wins.textContent = playerWin;
 wins.style.fontSize = "100px";
@@ -130,8 +138,10 @@ function update(){
     wins.textContent = playerWin;
     draws.textContent = draw;
     loses.textContent = playerLose;
+    results.textContent = result;
 }
 
+resultsInfo.appendChild(results);
 winsInfo.appendChild(wins);
 drawInfo.appendChild(draws);
 losesInfo.appendChild(loses);
