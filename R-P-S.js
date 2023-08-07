@@ -79,6 +79,20 @@ function playRound(player, computer) {
             result = "Draw";
         }
     }
+    if(playerWin == 5){
+        alert('You Wins!');
+        playerWin = 0;
+        playerLose = 0;
+        draw = 0;
+        result = "Rock, Paper or Scissors?";
+    }else if(playerLose == 5){
+        alert('The Computer Wins!');
+        playerWin = 0;
+        playerLose = 0;
+        draw = 0;
+        result = "Rock, Paper or Scissors?";
+    }   
+
 }
 
 //Five rounds - repeat playRound 5 times
@@ -140,6 +154,7 @@ function update(){
     loses.textContent = playerLose;
     results.textContent = result;
 }
+
 
 resultsInfo.appendChild(results);
 winsInfo.appendChild(wins);
