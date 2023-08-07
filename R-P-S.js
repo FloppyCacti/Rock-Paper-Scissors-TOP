@@ -35,6 +35,7 @@ function getComputerChoice(){
 
 let playerWin = 0;
 let playerLose = 0;
+let draw = 0;
 
 function playRound(player, computer) {
 
@@ -49,6 +50,7 @@ function playRound(player, computer) {
             playerLose = playerLose + 1;
             console.log("You lose! Paper beats Rock");
         }else{
+            draw = draw + 1;
             console.log("Draw");
         }
     }
@@ -60,6 +62,7 @@ function playRound(player, computer) {
             playerLose = playerLose + 1;
             console.log("You lose! Scissor beats Paper");
         }else{
+            draw = draw + 1;
             console.log("Draw");
         }
     }
@@ -71,6 +74,7 @@ function playRound(player, computer) {
             playerLose = playerLose + 1;
             console.log("You lose! Rock beats Scissor");
         }else{
+            draw = draw + 1;
             console.log("Draw");
         }
     }
@@ -102,3 +106,32 @@ function playRound(player, computer) {
 function game(playerSelection){
     playRound(playerSelection,getComputerChoice());
 }
+
+
+const winsInfo = document.querySelector('.player-win');
+const drawInfo = document.querySelector('.draw');
+const losesInfo = document.querySelector('.computer-win');
+
+
+let wins = document.createElement('h1');
+let loses = document.createElement('h1');
+let draws = document.createElement('h1');
+
+wins.textContent = playerWin;
+wins.style.fontSize = "100px";
+
+loses.textContent = playerLose;
+loses.style.fontSize = "100px";
+
+draws.textContent = draw;
+draws.style.fontSize = "100px";
+
+function update(){
+    wins.textContent = playerWin;
+    draws.textContent = draw;
+    loses.textContent = playerLose;
+}
+
+winsInfo.appendChild(wins);
+drawInfo.appendChild(draws);
+losesInfo.appendChild(loses);
